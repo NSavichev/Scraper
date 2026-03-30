@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Services.Contracts.Product;
+using System.Collections.Generic;
 using WebApi.Models.Product;
 
 namespace WebApi.Models.Shop
@@ -8,19 +9,11 @@ namespace WebApi.Models.Shop
     /// </summary>
     public class UpdatingShopWithProductModel
     {
-        /// <summary>
-        /// Название.
-        /// </summary>
         public string Name { get; set; }
-        
-        /// <summary>
-        /// Стоимость.
-        /// </summary>
+        public string ShopId { get; set; }      // строковое поле
         public string ShopUrl { get; set; }
-        
-        /// <summary>
-        /// Уроки.
-        /// </summary>
-        public IEnumerable<AttachingProductModel> Products { get; set; }
+        public bool IsAllScrap { get; set; }
+        public bool Deleted { get; set; }
+        public IEnumerable<AttachingProductDto> Products { get; set; }
     }
 }

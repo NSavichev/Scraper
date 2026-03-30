@@ -15,10 +15,6 @@
         public DateTime? CreateDate { get; set; }
         public DateTime? ScrapDate { get; set; }
         /// <summary>
-        /// json представление контента на основе которого получены данные
-        /// </summary>
-        public string? ScrapContent { get; set; }
-        /// <summary>
         /// Удалено.
         /// </summary>
         public bool? Deleted { get; set; }

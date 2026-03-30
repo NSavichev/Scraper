@@ -45,9 +45,6 @@ namespace Infrastructure.EF.Migrations
                     b.Property<string>("ProductUrl")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("ScrapContent")
-                        .HasColumnType("TEXT");
-
                     b.Property<DateTime?>("ScrapDate")
                         .HasColumnType("TEXT");
 

@@ -16,12 +16,12 @@ namespace Infrastructure.EF
         }
 
         /// <summary>
-        /// Курсы.
+        /// продукты.
         /// </summary>
         public DbSet<Product> Products { get; set; }
 
         /// <summary>
-        /// Уроки.
+        /// магазины.
         /// </summary>
         public DbSet<Shop> Shops { get; set; }
 

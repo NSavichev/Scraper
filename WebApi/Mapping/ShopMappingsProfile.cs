@@ -13,11 +13,11 @@ namespace WebApi.Mapping
         {
             CreateMap<ShopDto, ShopModel>()
              .ForMember(dest => dest.Products, opt => opt.MapFrom(src => src.Products));
-            CreateMap<CreatingShopModel, CreatingShopDto>()
-                .ForMember(dest => dest.Name, opt => opt.Ignore())
-                .ForMember(dest => dest.ShopId, opt => opt.Ignore())
-                .ForMember(dest => dest.ShopUrl, opt => opt.Ignore())
-                .ForMember(dest => dest.IsAllScrap, opt => opt.Ignore());
+            CreateMap<CreatingShopModel, CreatingShopDto>();
+                //.ForMember(dest => dest.Name, opt => opt.Ignore())
+                //.ForMember(dest => dest.ShopId, opt => opt.Ignore())
+                //.ForMember(dest => dest.ShopUrl, opt => opt.Ignore())
+                //.ForMember(dest => dest.IsAllScrap, opt => opt.Ignore());
             CreateMap<UpdatingShopModel, UpdatingShopDto>()
                 .ForMember(dest => dest.ShopUrl, opt => opt.MapFrom(src => src.ShopUrl));
             CreateMap<ShopFilterModel, ShopFilterDto>();

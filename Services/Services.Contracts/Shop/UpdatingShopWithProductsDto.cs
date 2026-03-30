@@ -8,19 +8,17 @@ namespace Services.Contracts.Shop
     /// </summary>
     public class UpdatingShopWithProductsDto
     {
-        /// <summary>
-        /// Название.
         /// </summary>
         public string Name { get; set; }
-        
+
         /// <summary>
-        /// ссылкана магазин.
+        /// ссылка на магазин.
         /// </summary>
         public string ShopUrl { get; set; }
-        
-        /// <summary>
-        /// Продукты
-        /// </summary>
+
+        public string ShopId { get; set; }
+        public bool IsAllScrap { get; set; }
+        public bool Deleted { get; set; }
         public IEnumerable<AttachingProductDto> Products { get; set; }
     }
 }

@@ -54,7 +54,6 @@ namespace Services.Implementations
             product.Id = creatingProductDto.Id;
             var createdLesson = await _productRepository.AddAsync(product);
             await _productRepository.SaveChangesAsync();
-            await _busControl.StartAsync();
             await _busControl.Publish(new MessageDto
             {
                 Content = $"Lesson {createdLesson.Id} with subject {createdLesson.Name} is added"
@@ -73,9 +72,10 @@ namespace Services.Implementations
             var product = await _productRepository.GetAsync(id, CancellationToken.None);
             if (product == null)
             {
-                throw new Exception($"Урок с id = {id} не найден");
+                throw new Exception($"Продукт с id = {id} не найден");
             }
 
+            _mapper.Map(updatingProductDto, product); // обновляет поля существующего объекта
             product.Name = updatingProductDto.Name;
             _productRepository.Update(product);
             await _productRepository.SaveChangesAsync();
@@ -97,7 +97,7 @@ namespace Services.Implementations
         /// </summary>
         /// <param name="page"> Номер страницы. </param>
         /// <param name="pageSize"> Объем страницы. </param>
-        /// <returns> Страница уроков. </returns>
+        /// <returns> Страница продуктов. </returns>
         public async Task<ICollection<ProductDto>> GetPagedAsync(int page, int pageSize)
         {
             ICollection<Product> entities = await _productRepository.GetPagedAsync(page, pageSize);

@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Services.Abstractions;
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Services.Abstractions;
 using Services.Contracts.Shop;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using WebApi.Models.Product;
 using WebApi.Models.Shop;
 
 namespace WebApi.Controllers
@@ -59,10 +60,9 @@ namespace WebApi.Controllers
         }
         
         [HttpPost("list")]
-        public async Task<IActionResult> GetListAsync(ShopFilterModel filterModel)
+        public async Task<IActionResult> GetListAsync(int page, int itemsPerPage)
         {
-            var filterDto = _mapper.Map<ShopFilterModel, ShopFilterDto>(filterModel);
-            return Ok(_mapper.Map<List<ShopModel>>(await _service.GetPagedAsync(filterDto)));
+            return Ok(_mapper.Map<List<ShopModel>>(await _service.GetPagedAsync(page, itemsPerPage)));
         }
         
         //[HttpPost("info/{fieldsToSelect}")]

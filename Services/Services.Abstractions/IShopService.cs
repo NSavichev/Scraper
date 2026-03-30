@@ -48,7 +48,7 @@ namespace Services.Abstractions
 		/// </summary>
 		/// <param name="filterDto"> ДТО фильтра. </param>
 		/// <returns> Список магазинов. </returns>
-		Task<ICollection<ShopDto>> GetPagedAsync(ShopFilterDto filterDto);
+		Task<ICollection<ShopDto>> GetPagedAsync(int page, int pageSize);
 
         //Task<IEnumerable<ShopInfoDto>> GetCourseInfosAsync(string fieldsToSelect);
     }

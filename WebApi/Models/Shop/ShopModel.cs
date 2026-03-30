@@ -4,7 +4,7 @@ using WebApi.Models.Product;
 namespace WebApi.Models.Shop
 {
     /// <summary>
-    /// Модель курса.
+    /// Модель магазина.
     /// </summary>
     public class ShopModel
     {
@@ -16,11 +16,18 @@ namespace WebApi.Models.Shop
         /// <summary>
         /// Название.
         /// </summary>
-        public string Name { get; set; }        
-        
+        public string Name { get; set; }
+
+        public string? ShopId { get; set; }
+        public string? ShopUrl { get; set; }
+        public bool IsAllScrap { get; set; }
         /// <summary>
-        /// Уроки.
+        /// карточки.
         /// </summary>
-        public List<Product.ProductModel> Products { get; set; }
+        public virtual ICollection<ProductModel>? Products { get; set; }
+        /// <summary>
+        /// Удалено.
+        /// </summary>
+        public bool Deleted { get; set; }
     }
 }

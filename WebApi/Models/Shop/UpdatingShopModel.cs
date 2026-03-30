@@ -1,18 +1,19 @@
-﻿namespace WebApi.Models.Shop
+﻿using Services.Contracts.Product;
+using System.Collections.Generic;
+
+namespace WebApi.Models.Shop
 {
     /// <summary>
     /// Модель редактируемого магазина.
     /// </summary>
     public class UpdatingShopModel
     {
-        /// <summary>
-        /// Название.
-        /// </summary>
         public string Name { get; set; }
-        
-        /// <summary>
-        /// Стоимость.
-        /// </summary>
-        public decimal ShopUrl { get; set; }
+        public string ShopId { get; set; }      // строковое поле
+        public string ShopUrl { get; set; }
+        public bool IsAllScrap { get; set; }
+        public bool Deleted { get; set; }
+        public List<ProductDto> Products { get; set; }
+
     }
 }

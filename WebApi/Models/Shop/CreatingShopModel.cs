@@ -1,4 +1,7 @@
-﻿namespace WebApi.Models.Shop
+﻿using Services.Contracts.Product;
+using System.Collections.Generic;
+
+namespace WebApi.Models.Shop
 {
     /// <summary>
     /// Модель создаваемого магазина.
@@ -12,5 +15,7 @@
         public string ShopId { get; set; }      // строковое поле
         public string ShopUrl { get; set; }
         public bool IsAllScrap { get; set; }
+        public bool Deleted { get; set; }
+        public List<ProductDto> Products { get; set; }
     }
 }

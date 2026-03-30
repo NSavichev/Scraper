@@ -82,10 +82,10 @@ namespace Services.Implementations
             await _shopRepository.SaveChangesAsync();
             //_unitOfWork.CourseRepository.Update(course);
             var products = _mapper.Map<IEnumerable<AttachingProductDto>, IEnumerable<Product>>(updatingShopWithProductsDto.Products);
-            foreach (var lesson in products)
+            foreach (var xProd in products)
             {
-                lesson.Id = 100; //Не существует
-                await _productRepository.AddAsync(lesson);
+                xProd.Id = 100; //Не существует
+                await _productRepository.AddAsync(xProd);
                 //await _unitOfWork.LessonRepository.AddAsync(lesson);
             }
             
@@ -128,9 +128,9 @@ namespace Services.Implementations
         /// </summary>
         /// <param name="filterDto"> ДТО фильтра. </param>
         /// <returns> Список магазинов. </returns>
-        public async Task<ICollection<ShopDto>> GetPagedAsync(ShopFilterDto filterDto)
+        public async Task<ICollection<ShopDto>> GetPagedAsync(int page, int pageSize)
         {
-            ICollection<Shop> entities = await _shopRepository.GetPagedAsync(filterDto);
+            ICollection<Shop> entities = await _shopRepository.GetPagedAsync(page, pageSize);
             return _mapper.Map<ICollection<Shop>, ICollection<ShopDto>>(entities);
         }
 

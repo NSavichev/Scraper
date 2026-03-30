@@ -16,7 +16,7 @@ using Services.Contracts.Shop;
 namespace Infrastructure.Repositories.Implementations
 {
     /// <summary>
-    /// Репозиторий работы с курсами.
+    /// Репозиторий работы с магазинами.
     /// </summary>
     public class ShopRepository: Repository<Shop, int>, IShopRepository
     {
@@ -29,7 +29,7 @@ namespace Infrastructure.Repositories.Implementations
         /// </summary>
         /// <param name="id"> Id сущности. </param>
         /// <param name="cancellationToken"></param>
-        /// <returns> Курс. </returns>
+        /// <returns> магазин. </returns>
         public override async Task<Shop> GetAsync(int id, CancellationToken cancellationToken)
         {
             var query = Context.Set<Shop>().AsQueryable();
@@ -45,30 +45,15 @@ namespace Infrastructure.Repositories.Implementations
         /// Получить постраничный список.
         /// </summary>
         /// <param name="filterDto"> ДТО фильтра. </param>
-        /// <returns> Список курсов. </returns>
-        public async Task<List<Shop>> GetPagedAsync(ShopFilterDto filterDto)
+        /// <returns> Список магазинов. </returns>
+        public async Task<List<Shop>> GetPagedAsync(int page, int pageSize)
         {
-            var query = GetAll()
-                //.ToList()
-                .Where(c => !c.Deleted);
-                //.Include(c => c.Lessons).AsQueryable();
-            if (!string.IsNullOrWhiteSpace(filterDto.Name))
-            {
-                query = query.Where(c => c.Name == filterDto.Name);
-            }
-            
-            //if (filterDto.Price.HasValue)
-            //{
-            //    query = query.Where(c => c.Price == filterDto.Price);
-            //}
+            var query = GetAll().Where(l => !l.Deleted == true);
+            return await query
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
 
-            query = query
-                .Skip((filterDto.Page - 1) * filterDto.ItemsPerPage)
-                .Take(filterDto.ItemsPerPage);
-
-            
-            return query.ToList();
-            
         }
 
         //public async Task<List<ShopInfo>> GetCourseInfosAsync(string fieldsToSelect)

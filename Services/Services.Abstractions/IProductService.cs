@@ -6,12 +6,12 @@ using Services.Contracts.Product;
 namespace Services.Abstractions
 {
     /// <summary>
-    /// Интерфейс сервиса работы с уроками.
+    /// Интерфейс сервиса работы с проуктами.
     /// </summary>
     public interface IProductService
     {
         /// <summary>
-        /// Получить урок. 
+        /// Получить проукт. 
         /// </summary>
         /// <param name="id"> Идентификатор. </param>
         /// <param name="cancellationToken"> Токен отмены </param>
@@ -19,21 +19,21 @@ namespace Services.Abstractions
         Task<ProductDto> GetByIdAsync(int id, CancellationToken cancellationToken);
 
         /// <summary>
-        /// Создать урок.
+        /// Создать проукт.
         /// </summary>
         /// <param name="creatingProductDto"> ДТО продукта. </param>
         /// <returns> Идентификатор. </returns>
         Task<int> CreateAsync(CreatingProductDto creatingProductDto);
 
         /// <summary>
-        /// Изменить урок.
+        /// Изменить проукт.
         /// </summary>
         /// <param name="id"> Идентификатор. </param>
         /// <param name="updatingProductDto"> ДТО продукта. </param>
         Task UpdateAsync(int id, UpdatingProductDto updatingProductDto);
 
         /// <summary>
-        /// Удалить продукт.
+        /// Удалить проукт.
         /// </summary>
         /// <param name="id"> Идентификатор. </param>
         Task DeleteAsync(int id);

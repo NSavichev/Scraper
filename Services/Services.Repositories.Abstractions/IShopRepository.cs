@@ -15,7 +15,7 @@ namespace Services.Repositories.Abstractions
         /// </summary>
         /// <param name="filterDto"> ДТО фильтра. </param>
         /// <returns> Список магазинов. </returns>
-        Task<List<Shop>> GetPagedAsync(ShopFilterDto filterDto);
+        Task<List<Shop>> GetPagedAsync(int page, int pageSize);
 
         /// <summary>
         /// Получить постраничный список.

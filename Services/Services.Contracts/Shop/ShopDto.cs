@@ -27,5 +27,8 @@ namespace Services.Contracts.Shop
         /// продукты.
         /// </summary>
         public List<ProductDto> Products { get; set; }
+        public bool IsAllScrap { get; set; }
+        public bool Deleted { get; set; }
+        public string ShopId { get; set; }
     }
 }

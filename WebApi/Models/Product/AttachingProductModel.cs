@@ -1,14 +1,23 @@
-﻿namespace WebApi.Models.Product
+﻿using System;
+
+namespace WebApi.Models.Product
 {
     /// <summary>
     /// Модель прикладываемого продукта.
     /// </summary>
     public class AttachingProductModel
     {
+        public string? IdProduct2Shop { get; set; }
+        public string? Name { get; set; }
+        public string? ProductUrl { get; set; }
+        public int? View { get; set; }
+        public decimal? Price { get; set; }
+        public int? ShopId { get; set; }
+        public DateTime? CreateDate { get; set; }
+        public DateTime? ScrapDate { get; set; }
         /// <summary>
-        /// Тема.
+        /// Удалено.
         /// </summary>
-        public string Name { get; set; }
-        public string ShopId { get; set; }
+        public bool? Deleted { get; set; }
     }
 }
