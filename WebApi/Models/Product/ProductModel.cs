@@ -2,7 +2,7 @@
 
 namespace WebApi.Models.Product
 {
-    public class ProductModel
+    public class ReportProductModel
     {
         /// <summary>
         /// Идентификатор.

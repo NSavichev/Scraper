@@ -61,6 +61,46 @@ namespace Infrastructure.EF.Migrations
                     b.ToTable("Products");
                 });
 
+            modelBuilder.Entity("Domain.EF.ReportProduct", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("AvgDay")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("Deleted")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("IdProduct")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("IdShop")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("IsFakeScrap")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("ScrapDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("UrlProduct")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("ViewAll")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ReportProducts");
+                });
+
             modelBuilder.Entity("Domain.EF.Shop", b =>
                 {
                     b.Property<int>("Id")

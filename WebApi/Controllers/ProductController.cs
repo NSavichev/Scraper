@@ -29,7 +29,7 @@ namespace WebApi.Controllers
         public async Task<IActionResult> GetAsync(int id, CancellationToken cancellationToken)
         {
             var lessonDto = await _service.GetByIdAsync(id, cancellationToken);
-            return Ok(_mapper.Map<ProductDto, ProductModel>(lessonDto));
+            return Ok(_mapper.Map<ProductDto, ReportProductModel>(lessonDto));
         }
 
         [HttpPost]
@@ -55,7 +55,7 @@ namespace WebApi.Controllers
         [HttpGet("list/{page}/{itemsPerPage}")]
         public async Task<IActionResult> GetListAsync(int page, int itemsPerPage)
         {
-            return Ok(_mapper.Map<List<ProductModel>>(await _service.GetPagedAsync(page, itemsPerPage)));
+            return Ok(_mapper.Map<List<ReportProductModel>>(await _service.GetPagedAsync(page, itemsPerPage)));
         }
     }
 }

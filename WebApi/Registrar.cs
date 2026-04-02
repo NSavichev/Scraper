@@ -29,7 +29,8 @@ namespace WebApi
         {
             serviceCollection
                 .AddTransient<IShopService, ShopService>()
-                .AddTransient<IProductService, ProductService>();
+                .AddTransient<IProductService, ProductService>()
+                .AddTransient<IReportProductService, ReportProductService>();
             return serviceCollection;
         }
         
@@ -38,6 +39,7 @@ namespace WebApi
             serviceCollection
                 .AddTransient<IShopRepository, ShopRepository>()
                 .AddTransient<IProductRepository, ProductRepository>()
+                .AddTransient<IReportProductRepository, ReportProductRepository>()
                 .AddTransient<IUnitOfWork, UnitOfWork>();
             return serviceCollection;
         }

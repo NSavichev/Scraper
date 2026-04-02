@@ -20,6 +20,6 @@ namespace Services.Repositories.Abstractions
         /// <summary>
         /// Получить постраничный список.
         /// </summary>
-        Task<List<Shop>> GetCourseInfosAsync(string fieldsToSelect);
+        Task<List<Shop>> GetShopsInfosAsync(string fieldsToSelect);
     }
 }

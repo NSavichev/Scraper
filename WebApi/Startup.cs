@@ -91,8 +91,10 @@ namespace WebApi
             {
                 cfg.AddProfile<ShopMappingsProfile>();
                 cfg.AddProfile<ProductMappingsProfile>();
+                cfg.AddProfile<ReportProductMappingsProfile>();
                 cfg.AddProfile<Services.Implementations.Mapping.ShopMappingsProfile>();
                 cfg.AddProfile<Services.Implementations.Mapping.ProductMappingsProfile>();
+                cfg.AddProfile<Services.Implementations.Mapping.ReportProductMappingProfile>();
             });
             configuration.AssertConfigurationIsValid();
             return configuration;

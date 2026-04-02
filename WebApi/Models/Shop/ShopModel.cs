@@ -24,7 +24,7 @@ namespace WebApi.Models.Shop
         /// <summary>
         /// карточки.
         /// </summary>
-        public virtual ICollection<ProductModel>? Products { get; set; }
+        public virtual ICollection<ReportProductModel>? Products { get; set; }
         /// <summary>
         /// Удалено.
         /// </summary>

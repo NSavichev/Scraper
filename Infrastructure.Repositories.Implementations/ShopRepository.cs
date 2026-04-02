@@ -36,7 +36,7 @@ namespace Infrastructure.Repositories.Implementations
             return await query.SingleOrDefaultAsync(c => c.Id == id);
         }
 
-        public Task<List<Shop>> GetCourseInfosAsync(string fieldsToSelect)
+        public Task<List<Shop>> GetShopsInfosAsync(string fieldsToSelect)
         {
             throw new NotImplementedException();
         }

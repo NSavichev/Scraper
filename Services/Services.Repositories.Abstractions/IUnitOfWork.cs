@@ -11,6 +11,8 @@ namespace Services.Repositories.Abstractions
 
         IShopRepository ShopRepository { get; }
 
+        IReportProductRepository ReportProductRepository { get; }
+
         Task SaveChangesAsync();
     }
 }

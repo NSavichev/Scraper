@@ -25,6 +25,8 @@ namespace Infrastructure.EF
         /// </summary>
         public DbSet<Shop> Shops { get; set; }
 
+        public DbSet<ReportProduct> ReportProducts { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

@@ -11,7 +11,7 @@ namespace WebApi.Mapping
     {
         public ProductMappingsProfile()
         {
-            CreateMap<ProductDto, ProductModel>()
+            CreateMap<ProductDto, ReportProductModel>()
                 .ForMember(dest => dest.Id, opt => opt.Ignore());
             CreateMap<CreatingProductModel, CreatingProductDto>()
                 .ForMember(dest => dest.Id, opt => opt.Ignore());
