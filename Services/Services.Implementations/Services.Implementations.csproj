@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Domain.EF\Domain.EF.csproj" />
+    <ProjectReference Include="..\..\ExternalClients\ExternalClients.csproj" />
     <ProjectReference Include="..\Services.Repositories.Abstractions\Services.Repositories.Abstractions.csproj" />
     <ProjectReference Include="..\Services.Abstractions\Services.Abstractions.csproj" />
   </ItemGroup>

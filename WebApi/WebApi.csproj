@@ -22,6 +22,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\ExternalClients\ExternalClients.csproj" />
 		<ProjectReference Include="..\Infrastructure.EF\Infrastructure.EF.csproj" />
 		<ProjectReference Include="..\Infrastructure.Repositories.Implementations\Infrastructure.Repositories.Implementations.csproj" />
 		<ProjectReference Include="..\Services\Services.Abstractions\Services.Abstractions.csproj" />
